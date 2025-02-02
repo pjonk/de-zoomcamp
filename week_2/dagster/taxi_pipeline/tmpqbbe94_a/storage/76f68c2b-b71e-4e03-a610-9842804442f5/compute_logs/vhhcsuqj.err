@@ -1,0 +1,5 @@
+[32m2025-02-02 16:51:17 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 76f68c2b-b71e-4e03-a610-9842804442f5 - 77688 - LOGS_CAPTURED - Started capturing logs in process (pid: 77688).
+[32m2025-02-02 16:51:17 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 76f68c2b-b71e-4e03-a610-9842804442f5 - 77688 - taxi_bigquery_data - STEP_START - Started execution of step "taxi_bigquery_data".
+[32m2025-02-02 16:51:25 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 76f68c2b-b71e-4e03-a610-9842804442f5 - 77688 - taxi_bigquery_data - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2025-02-02 16:51:25 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 76f68c2b-b71e-4e03-a610-9842804442f5 - 77688 - taxi_bigquery_data - ASSET_MATERIALIZATION - Materialized value taxi_bigquery_data.
+[32m2025-02-02 16:51:25 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 76f68c2b-b71e-4e03-a610-9842804442f5 - 77688 - taxi_bigquery_data - STEP_SUCCESS - Finished execution of step "taxi_bigquery_data" in 7.74s.

@@ -217,3 +217,5 @@ operations/variable-scripts/variable.json
 .sentinel
 
 *.csv
+*.terraform.lock.hcl
+
