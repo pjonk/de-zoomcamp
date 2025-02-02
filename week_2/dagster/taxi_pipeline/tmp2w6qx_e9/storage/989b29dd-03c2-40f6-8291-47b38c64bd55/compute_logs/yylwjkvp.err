@@ -1,0 +1,45 @@
+[32m2025-02-02 15:25:25 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 989b29dd-03c2-40f6-8291-47b38c64bd55 - 244924 - LOGS_CAPTURED - Started capturing logs in process (pid: 244924).
+[32m2025-02-02 15:25:25 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 989b29dd-03c2-40f6-8291-47b38c64bd55 - 244924 - taxi_bucket_data - STEP_START - Started execution of step "taxi_bucket_data".
+[32m2025-02-02 15:25:25 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 989b29dd-03c2-40f6-8291-47b38c64bd55 - taxi_bucket_data - Processing https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2020-12.csv.gz
+[32m2025-02-02 15:25:26 +0000[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 989b29dd-03c2-40f6-8291-47b38c64bd55 - 244924 - taxi_bucket_data - STEP_FAILURE - Execution of step "taxi_bucket_data" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "taxi_bucket_data"::
+
+ValueError: Missing column provided to 'parse_dates': 'lpep_dropoff_datetime, lpep_pickup_datetime'
+
+Stack Trace:
+  File "/home/patrick/miniconda3/envs/dag-env/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 56, in op_execution_error_boundary
+    yield
+  File "/home/patrick/miniconda3/envs/dag-env/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 480, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/home/patrick/miniconda3/envs/dag-env/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 127, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/patrick/miniconda3/envs/dag-env/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/patrick/de-zoomcamp/week_2/dagster-taxi_pipeline/taxi_pipeline/taxi_pipeline/assets.py", line 111, in taxi_bucket_data
+    results = load_taxi_data(context, year_month, color)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/patrick/de-zoomcamp/week_2/dagster-taxi_pipeline/taxi_pipeline/taxi_pipeline/assets.py", line 40, in load_taxi_data
+    return pd.read_csv(get_url(year_month), sep=',', compression='gzip', dtype=taxi_dtypes, parse_dates=parse_dates)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/patrick/miniconda3/envs/dag-env/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/patrick/miniconda3/envs/dag-env/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/patrick/miniconda3/envs/dag-env/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/patrick/miniconda3/envs/dag-env/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1898, in _make_engine
+    return mapping[engine](f, **self.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/patrick/miniconda3/envs/dag-env/lib/python3.12/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 161, in __init__
+    self._validate_parse_dates_presence(self.names)  # type: ignore[has-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/patrick/miniconda3/envs/dag-env/lib/python3.12/site-packages/pandas/io/parsers/base_parser.py", line 243, in _validate_parse_dates_presence
+    raise ValueError(
+[0m

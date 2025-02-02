@@ -1,0 +1,24 @@
+[32m2025-02-02 15:22:04 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 62314de2-5829-4b08-b3c1-cfc2cf6d04a0 - 239043 - LOGS_CAPTURED - Started capturing logs in process (pid: 239043).
+[32m2025-02-02 15:22:04 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 62314de2-5829-4b08-b3c1-cfc2cf6d04a0 - 239043 - taxi_bucket_data - STEP_START - Started execution of step "taxi_bucket_data".
+[32m2025-02-02 15:22:04 +0000[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 62314de2-5829-4b08-b3c1-cfc2cf6d04a0 - 239043 - taxi_bucket_data - STEP_FAILURE - Execution of step "taxi_bucket_data" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "taxi_bucket_data"::
+
+UnboundLocalError: cannot access local variable 'color' where it is not associated with a value
+
+Stack Trace:
+  File "/home/patrick/miniconda3/envs/dag-env/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 56, in op_execution_error_boundary
+    yield
+  File "/home/patrick/miniconda3/envs/dag-env/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 480, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/home/patrick/miniconda3/envs/dag-env/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 127, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/patrick/miniconda3/envs/dag-env/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/patrick/de-zoomcamp/week_2/dagster-taxi_pipeline/taxi_pipeline/taxi_pipeline/assets.py", line 105, in taxi_bucket_data
+    results = load_taxi_data(context, year_month, color)
+                                                  ^^^^^
+[0m

@@ -1,0 +1,7 @@
+[32m2025-02-02 15:43:56 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 9d20c56d-a72b-48f6-8d7e-48c0a2eaf41b - 276824 - LOGS_CAPTURED - Started capturing logs in process (pid: 276824).
+[32m2025-02-02 15:43:56 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 9d20c56d-a72b-48f6-8d7e-48c0a2eaf41b - 276824 - taxi_bucket_data - STEP_START - Started execution of step "taxi_bucket_data".
+[32m2025-02-02 15:43:56 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 9d20c56d-a72b-48f6-8d7e-48c0a2eaf41b - taxi_bucket_data - Processing https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2020-05.csv.gz
+[32m2025-02-02 15:44:37 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 9d20c56d-a72b-48f6-8d7e-48c0a2eaf41b - taxi_bucket_data - Uploading to GCS blob: data/yellow_taxi_data_2020-05.parquet
+[32m2025-02-02 15:44:38 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 9d20c56d-a72b-48f6-8d7e-48c0a2eaf41b - 276824 - taxi_bucket_data - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2025-02-02 15:44:38 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 9d20c56d-a72b-48f6-8d7e-48c0a2eaf41b - 276824 - taxi_bucket_data - ASSET_MATERIALIZATION - Materialized value taxi_bucket_data.
+[32m2025-02-02 15:44:38 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 9d20c56d-a72b-48f6-8d7e-48c0a2eaf41b - 276824 - taxi_bucket_data - STEP_SUCCESS - Finished execution of step "taxi_bucket_data" in 42.15s.

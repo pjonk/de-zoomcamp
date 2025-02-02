@@ -1,0 +1,3 @@
+[32m2025-02-02 15:46:18 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 7905c5dd-581d-41a9-b6bb-6c22575c9dc8 - 285199 - LOGS_CAPTURED - Started capturing logs in process (pid: 285199).
+[32m2025-02-02 15:46:18 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 7905c5dd-581d-41a9-b6bb-6c22575c9dc8 - 285199 - taxi_bucket_data - STEP_START - Started execution of step "taxi_bucket_data".
+[32m2025-02-02 15:46:18 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 7905c5dd-581d-41a9-b6bb-6c22575c9dc8 - taxi_bucket_data - Processing https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-07.csv.gz

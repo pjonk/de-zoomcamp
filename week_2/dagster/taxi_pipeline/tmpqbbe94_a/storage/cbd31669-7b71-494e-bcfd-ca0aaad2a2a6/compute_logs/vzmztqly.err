@@ -1,0 +1,2 @@
+[32m2025-02-02 16:43:05 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - cbd31669-7b71-494e-bcfd-ca0aaad2a2a6 - 61875 - LOGS_CAPTURED - Started capturing logs in process (pid: 61875).
+[32m2025-02-02 16:43:05 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - cbd31669-7b71-494e-bcfd-ca0aaad2a2a6 - 61875 - taxi_bigquery_data - STEP_START - Started execution of step "taxi_bigquery_data".
